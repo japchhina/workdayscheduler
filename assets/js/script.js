@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   function hourUpdater() {
     var currentH = dayjs().hours();
-    $('.time-block').each(function() {
+    $('.time').each(function() {
         var hour = parseInt($(this).attr('id').split('-')[1]);
         if (hour < currentH) {
             $(this).addClass('past');
