@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('.saveBtn').on('click', function() {
     var time = $(this).parent().attr('id');
     var value = $(this).siblings('.description').val();
-    localStorage.setItem(time, value);
+    localStorage.setItem (value, time);
     $('.notifcation').addClass('show');
     setTimeout(function() {
       $('.notifcation').removeClass('show');
@@ -12,10 +12,10 @@ $(document).ready(function() {
   function hourUpdater() {
     var currentH = dayjs().hours();
     $('.time-block').each(function() {
-        var Hour = parseInt($(this).attr('id').split('-')[1]);
-        if (Hour < currentH) {
+        var hour = parseInt($(this).attr('id').split('-')[1]);
+        if (hour < currentH) {
             $(this).addClass('past');
-        } else if (Hour === currentH) {
+        } else if (hour === currentH) {
             $(this).removeClass('past');
             $(this).addClass('present');
         } else {
